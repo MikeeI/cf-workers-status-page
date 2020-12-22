@@ -26,7 +26,7 @@ monitors:
   - id: www-cloudflare-com
     name: www.cloudflare.com
     description: 'Built for anything connected to the Internet.'
-    url: 'cf-workers-status-page-production.cloudflare3125.workers.dev'
+    url: 'https://cf-workers-status-page-production.cloudflare3125.workers.dev'
     method: GET
     expectStatus: 200
 
