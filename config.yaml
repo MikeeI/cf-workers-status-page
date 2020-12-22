@@ -29,9 +29,4 @@ monitors:
     expectStatus: 200
     followRedirect: true
 
-  - id: debug_recursive_workers_dev
-    name: DEBUG.cf-workers-status-page-production.cloudflare3125.workers.dev
-    url: 'https://cf-workers-status-page-production.cloudflare3125.workers.dev'
-    method: GET
-    expectStatus: 200
-    followRedirect: true
+
