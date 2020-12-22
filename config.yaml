@@ -2,8 +2,8 @@ settings:
   title: 'Status Page'
   url: 'https://status-page.eidam.dev' # used for Slack messages
   logo: logo-192x192.png # image in ./public/ folder
-  daysInHistogram: 7 # number of days you want to display in histogram
-  collectResponseTimes: false # experimental feature, enable only for <5 monitors or on paid plans
+  daysInHistogram: 30 # number of days you want to display in histogram
+  collectResponseTimes: true # experimental feature, enable only for <5 monitors or on paid plans
 
   allmonitorsOperational: 'All Systems Operational'
   notAllmonitorsOperational: 'Not All Systems Operational'
@@ -15,23 +15,23 @@ settings:
   dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
 
 monitors:
-  - id: workers-cloudflare-com # unique identifier
-    name: workers.cloudflare.com
-    description: 'You write code. They handle the rest.' # default=empty
-    url: 'https://workers.cloudflare.com/' # URL to fetch
-    method: GET # default=GET
-    expectStatus: 200 # operational status, default=200
-    followRedirect: false # should fetch follow redirects, default=false
+  - id: example_org
+    name: example.org
+    url: 'https://example.org'
+    method: GET
+    expectStatus: 200
+    followRedirect: true
 
-  - id: www-cloudflare-com
-    name: www.cloudflare.com
-    description: 'Built for anything connected to the Internet.'
+  - id: debug_webhook_site
+    name: DEBUG.webhook.site
+    url: 'https://webhook.site/fd544088-f85f-45fa-b0e1-b6c4db1e9430'
+    method: GET
+    expectStatus: 200
+    followRedirect: true
+
+  - id: debug_recursive_workers_dev
+    name: DEBUG.cf-workers-status-page-production.cloudflare3125.workers.dev
     url: 'https://cf-workers-status-page-production.cloudflare3125.workers.dev'
     method: GET
     expectStatus: 200
-
-  - id: orf_at
-    name: ORF
-    url: 'https://orf.at'
-    method: GET
-    expectStatus: 200
+    followRedirect: true
